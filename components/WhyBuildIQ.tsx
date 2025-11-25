@@ -6,29 +6,30 @@ import { Zap, Layout, Clock, BrainCircuit } from "lucide-react";
 const features = [
     {
         icon: <BrainCircuit className="w-6 h-6" />,
-        title: "Modern Development Stack",
+        title: "Next.js Performance & Modern Tech",
         description:
-            "We use the latest tech (Next.js 14, React Server Components) to ensure your site is future-proof.",
+            "We build fast, future-proof websites using Next.js 14, React Server Components, and scalable infrastructure.",
     },
     {
         icon: <Layout className="w-6 h-6" />,
-        title: "Pixel-Perfect UI",
+        title: "Premium UI & Visual Craftsmanship",
         description:
-            "Every pixel is placed with purpose. We obsess over spacing, typography, and visual hierarchy.",
+            "Pixel-perfect interfaces with clean layout, premium typography, and high-converting user experience.",
     },
     {
         icon: <Clock className="w-6 h-6" />,
-        title: "Fast Delivery",
+        title: "Fast Turnaround & Smooth Delivery",
         description:
-            "Our streamlined workflow allows us to launch production-ready sites in weeks, not months.",
+            "Our refined workflow allows us to launch high-quality projects in weeks while maintaining exceptional quality.",
     },
     {
         icon: <Zap className="w-6 h-6" />,
-        title: "AI Power Integrations",
+        title: "AI Integrations & Automation",
         description:
-            "Leverage AI to automate customer support, content generation, and data analysis.",
+            "We implement custom AI tools, chatbots, and automations that streamline operations and improve customer experience.",
     },
 ];
+
 
 export default function WhyBuildIQ() {
     return (
@@ -41,14 +42,21 @@ export default function WhyBuildIQ() {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6 leading-tight">
-                            Why Leading Brands <br />
+                            Why UK Businesses <br />
                             Choose <span className="text-primary">BuildIQ</span>
+
+                            {/* Hidden SEO text */}
+                            <span className="sr-only">
+                                BuildIQ is a UK web design, development, branding and AI automation agency trusted by modern businesses for high-performance digital solutions.
+                            </span>
                         </h2>
+
                         <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                            We don't just build websites; we build digital assets that drive
-                            growth. Our approach combines aesthetic excellence with technical
-                            superiority.
+                            We build high-performance digital experiences that help UK businesses grow.
+                            From premium web design and Next.js development to branding and AI automation,
+                            our work blends design excellence with technical innovation.
                         </p>
+
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             {features.map((feature, index) => (

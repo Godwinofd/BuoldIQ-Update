@@ -23,7 +23,7 @@ export default function Hero() {
                 >
                     <Sparkles className="w-4 h-4 text-primary" />
                     <span className="text-sm font-medium text-muted-foreground">
-                        Premium Web Design & Development
+                        Web Design, Development & AI Automation
                     </span>
                 </motion.div>
 
@@ -33,12 +33,19 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-heading tracking-tight mb-6 leading-[1.1] px-4 sm:px-0"
                 >
+                    {/* Hidden SEO text for Google */}
+                    <span className="sr-only">
+                        BuildIQ is a UK-based web design and development agency specialising in high-performance Next.js websites, branding, and AI-powered business automation.
+                    </span>
+
                     Websites Built to <br />
-                    <span className="text-gradient-gold">Convert.</span> Designed to{" "}
+                    <span className="text-gradient-gold">Convert.</span>{" "}
+                    Designed to{" "}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
                         Impress.
                     </span>
                 </motion.h1>
+
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -46,9 +53,12 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 px-4 sm:px-0"
                 >
-                    We build modern, high-performance websites for brands that want to scale.
-                    Blending architectural precision with digital innovation.
+                    BuildIQ is a UK-based web design and development studio creating high-converting,
+                    SEO-optimised websites for modern businesses. We specialise in premium design,
+                    fast Next.js builds, brand identity, and AI-powered automation — helping brands
+                    stand out and scale online.
                 </motion.p>
+
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

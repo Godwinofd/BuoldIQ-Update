@@ -6,33 +6,50 @@ import { Palette, Code, Bot, Rocket, Layout, Monitor } from "lucide-react";
 const services = [
     {
         icon: <Layout className="w-8 h-8" />,
-        title: "Website Design & Development",
+        title: "Web Design & Next.js Development",
         description:
-            "Complete digital solutions from stunning visuals to high-performance code.",
-        benefits: ["Custom Next.js Development", "SEO Optimized Structure", "Responsive & Fast"],
+            "High-performance websites built with modern UX, fast Next.js architecture, and SEO-ready foundations to help UK businesses grow online.",
+        benefits: [
+            "Custom Next.js Website Builds",
+            "Full Web Design & Development",
+            "SEO-Optimised Architecture",
+        ],
     },
     {
         icon: <Palette className="w-8 h-8" />,
-        title: "UI/UX Design",
+        title: "UI/UX Design for Modern Brands",
         description:
-            "User-centric interfaces that drive engagement and conversion.",
-        benefits: ["User Research & Strategy", "Wireframing & Prototyping", "Design Systems"],
+            "Conversion-focused interfaces crafted through research, strategy, and clean visual design to improve user experience and engagement.",
+        benefits: [
+            "UX Research & User Journey Mapping",
+            "Wireframing & Interactive Prototyping",
+            "Design Systems & Component Libraries",
+        ],
     },
     {
         icon: <Rocket className="w-8 h-8" />,
         title: "Brand Design & Visual Identity",
         description:
-            "Memorable branding that positions you as a market leader.",
-        benefits: ["Logo & Identity Design", "Brand Guidelines", "Visual Assets"],
+            "Distinct, professional branding that helps businesses stand out with memorable visuals, strong identity systems, and premium presentation.",
+        benefits: [
+            "Logo & Visual Identity Design",
+            "Brand Guidelines & Typography Systems",
+            "Digital & Print Asset Creation",
+        ],
     },
     {
         icon: <Bot className="w-8 h-8" />,
-        title: "AI Automation & Integrations",
+        title: "AI Automation & Business Systems",
         description:
-            "Streamline operations with custom AI solutions and workflow automation.",
-        benefits: ["Custom Chatbots", "Workflow Automation", "API Integrations"],
+            "Custom AI-powered automations, chatbots, and workflow integrations to streamline operations and scale your business efficiently.",
+        benefits: [
+            "Custom AI Chatbots & Assistants",
+            "End-to-End Workflow Automation",
+            "API & System Integrations",
+        ],
     },
 ];
+
 
 export default function ServicesExpanded() {
     return (
