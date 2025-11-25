@@ -140,50 +140,52 @@ export default function Testimonials() {
 
                 {/* Navigation Controls */}
                 <div className="flex items-center justify-center gap-4 mt-12">
+                    {/* Desktop Navigation */}
                     <button
-                        onClick={() => {
-                            if (window.innerWidth >= 768) {
-                                paginate(-1);
-                            } else {
-                                paginateMobile(-1);
-                            }
-                        }}
-                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 transition-all"
+                        onClick={() => paginate(-1)}
+                        className="hidden md:block p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 transition-all"
                         aria-label="Previous testimonials"
                     >
                         <ChevronLeft className="w-5 h-5" />
                     </button>
 
-                    <div className="flex gap-2">
-                        {testimonials.map((_, idx) => {
-                            const isActive = window.innerWidth >= 768
-                                ? idx >= currentIndex && idx < currentIndex + 3
-                                : idx === currentIndex;
+                    {/* Mobile Navigation */}
+                    <button
+                        onClick={() => paginateMobile(-1)}
+                        className="md:hidden p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 transition-all"
+                        aria-label="Previous testimonial"
+                    >
+                        <ChevronLeft className="w-5 h-5" />
+                    </button>
 
-                            return (
-                                <button
-                                    key={idx}
-                                    onClick={() => setCurrentIndex(idx)}
-                                    className={`h-2 rounded-full transition-all ${isActive
-                                            ? "w-8 bg-primary"
-                                            : "w-2 bg-white/20 hover:bg-white/40"
-                                        }`}
-                                    aria-label={`Go to testimonial ${idx + 1}`}
-                                />
-                            );
-                        })}
+                    <div className="flex gap-2">
+                        {testimonials.map((_, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => setCurrentIndex(idx)}
+                                className={`h-2 rounded-full transition-all ${idx === currentIndex
+                                        ? "w-8 bg-primary"
+                                        : "w-2 bg-white/20 hover:bg-white/40"
+                                    }`}
+                                aria-label={`Go to testimonial ${idx + 1}`}
+                            />
+                        ))}
                     </div>
 
+                    {/* Desktop Navigation */}
                     <button
-                        onClick={() => {
-                            if (window.innerWidth >= 768) {
-                                paginate(1);
-                            } else {
-                                paginateMobile(1);
-                            }
-                        }}
-                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 transition-all"
+                        onClick={() => paginate(1)}
+                        className="hidden md:block p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 transition-all"
                         aria-label="Next testimonials"
+                    >
+                        <ChevronRight className="w-5 h-5" />
+                    </button>
+
+                    {/* Mobile Navigation */}
+                    <button
+                        onClick={() => paginateMobile(1)}
+                        className="md:hidden p-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/50 transition-all"
+                        aria-label="Next testimonial"
                     >
                         <ChevronRight className="w-5 h-5" />
                     </button>
