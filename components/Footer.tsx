@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -23,7 +23,6 @@ export default function Footer() {
                             >
                                 <Instagram className="w-5 h-5" />
                             </Link>
-
                         </div>
                     </div>
 
@@ -32,7 +31,7 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <Link
-                                    href="#services"
+                                    href="/#services"
                                     className="text-muted-foreground hover:text-primary transition-colors"
                                 >
                                     Services
@@ -40,7 +39,15 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href="#process"
+                                    href="/case-studies"
+                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                    Case Studies
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/#process"
                                     className="text-muted-foreground hover:text-primary transition-colors"
                                 >
                                     Process
@@ -48,7 +55,7 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link
-                                    href="#pricing"
+                                    href="/#pricing"
                                     className="text-muted-foreground hover:text-primary transition-colors"
                                 >
                                     Pricing
@@ -56,6 +63,39 @@ export default function Footer() {
                             </li>
                         </ul>
                     </div>
+
+                    <div>
+                        <h4 className="font-bold mb-6">Legal</h4>
+                        <ul className="space-y-4">
+                            <li>
+                                <Link
+                                    href="/privacy"
+                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/terms"
+                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                    Terms of Service
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/cookies"
+                                    className="text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                    Cookie Policy
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm text-muted-foreground">
                         &copy; {new Date().getFullYear()} BuildIQ Agency. All rights reserved.
                     </p>
