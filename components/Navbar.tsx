@@ -15,7 +15,6 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "Services", href: isHomePage ? "#services" : "/#services" },
-        { name: "Work", href: isHomePage ? "#work" : "/#work" },
         { name: "Case Studies", href: "/case-studies" },
         { name: "Process", href: isHomePage ? "#process" : "/#process" },
         { name: "Pricing", href: isHomePage ? "#pricing" : "/#pricing" },
