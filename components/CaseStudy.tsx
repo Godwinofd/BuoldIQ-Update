@@ -22,14 +22,14 @@ export default function CaseStudy() {
                             <div className="w-full h-full bg-neutral-800 flex items-center justify-center text-neutral-600">
                                 <span className="text-lg">KO MartialartsUnit Case Study Image</span>
                             </div>
-                            {/* 
-              <Image
-                src="/images/ko-case-study.jpg"
-                alt="KO MartialartsUnit Website Redesign"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              */}
+
+                            <Image
+                                src="/images/ko-case-study.jpg"
+                                alt="KO MartialartsUnit Website Redesign"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+
                         </div>
                     </motion.div>
 
@@ -60,13 +60,21 @@ export default function CaseStudy() {
                             ))}
                         </div>
 
-                        <Link
-                            href="#"
-                            className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300 group"
-                        >
-                            View Case Study
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        <div className="flex flex-wrap items-center gap-6">
+                            <Link
+                                href="/case-studies/ko-martialartsunit"
+                                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all duration-300 group"
+                            >
+                                View Case Study
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                            <Link
+                                href="/case-studies"
+                                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                View All Case Studies
+                            </Link>
+                        </div>
                     </motion.div>
                 </div>
             </div>

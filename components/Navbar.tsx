@@ -2,20 +2,24 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#work" },
-    { name: "Process", href: "#process" },
-    { name: "Pricing", href: "#pricing" },
-];
-
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const isHomePage = pathname === "/";
+
+    const navLinks = [
+        { name: "Services", href: isHomePage ? "#services" : "/#services" },
+        { name: "Work", href: isHomePage ? "#work" : "/#work" },
+        { name: "Case Studies", href: "/case-studies" },
+        { name: "Process", href: isHomePage ? "#process" : "/#process" },
+        { name: "Pricing", href: isHomePage ? "#pricing" : "/#pricing" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {

@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import ServicesExpanded from "@/components/ServicesExpanded";
 import CaseStudy from "@/components/CaseStudy";
 import WhyBuildIQ from "@/components/WhyBuildIQ";
 import Process from "@/components/Process";
@@ -14,7 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
-      <Services />
+      <ServicesExpanded />
       <CaseStudy />
       <WhyBuildIQ />
       <Process />

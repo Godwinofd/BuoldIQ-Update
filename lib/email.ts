@@ -84,7 +84,7 @@ export async function sendThankYouEmail(data: ContactEmailData): Promise<boolean
               <p>Our team will review your requirements and get back to you within <strong>48 hours</strong> with next steps.</p>
               
               <p>In the meantime, feel free to check out our latest work and insights:</p>
-              <a href="https://buildiq.agency" class="button">Visit Our Website</a>
+              <a href="https://buildiq.org" class="button">Visit Our Website</a>
               
               <p style="margin-top: 30px;">Best regards,<br><strong>The BuildIQ Team</strong></p>
             </div>

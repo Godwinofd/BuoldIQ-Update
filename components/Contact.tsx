@@ -77,7 +77,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-muted-foreground">Email Us</p>
-                                    <p className="text-lg font-bold">hello@buildiq.agency</p>
+                                    <p className="text-lg font-bold">enquiry@buildiqs.org</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -86,7 +86,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-muted-foreground">Call Us</p>
-                                    <p className="text-lg font-bold">+44 (0) 20 1234 5678</p>
+                                    <p className="text-lg font-bold">+44 (0) 73 0834 3820</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -95,7 +95,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-muted-foreground">Visit Us</p>
-                                    <p className="text-lg font-bold">London, United Kingdom</p>
+                                    <p className="text-lg font-bold">Oxford, United Kingdom</p>
                                 </div>
                             </div>
                         </div>
