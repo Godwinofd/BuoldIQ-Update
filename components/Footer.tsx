@@ -18,29 +18,12 @@ export default function Footer() {
                         </p>
                         <div className="flex items-center gap-4">
                             <Link
-                                href="#"
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                            >
-                                <Twitter className="w-5 h-5" />
-                            </Link>
-                            <Link
-                                href="#"
+                                href="https://www.instagram.com/buil.diq"
                                 className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                             >
                                 <Instagram className="w-5 h-5" />
                             </Link>
-                            <Link
-                                href="#"
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                            >
-                                <Linkedin className="w-5 h-5" />
-                            </Link>
-                            <Link
-                                href="#"
-                                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                            >
-                                <Github className="w-5 h-5" />
-                            </Link>
+
                         </div>
                     </div>
 
@@ -53,14 +36,6 @@ export default function Footer() {
                                     className="text-muted-foreground hover:text-primary transition-colors"
                                 >
                                     Services
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="#work"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    Work
                                 </Link>
                             </li>
                             <li>
@@ -81,44 +56,8 @@ export default function Footer() {
                             </li>
                         </ul>
                     </div>
-
-                    <div>
-                        <h4 className="font-bold mb-6">Legal</h4>
-                        <ul className="space-y-4">
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    Terms of Service
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="#"
-                                    className="text-muted-foreground hover:text-primary transition-colors"
-                                >
-                                    Cookie Policy
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm text-muted-foreground">
                         &copy; {new Date().getFullYear()} BuildIQ Agency. All rights reserved.
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                        Designed & Built by BuildIQ
                     </p>
                 </div>
             </div>
