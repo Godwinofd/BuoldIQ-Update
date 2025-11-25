@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const oswald = Oswald({
   subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "BuildIQ",
+  title: "BuildIQ | Websites Built to Convert",
   description:
-    "We design and automate digital spaces with architectural precision.",
+    "BuildIQ is a modern web agency specializing in high-performance Next.js websites, AI automation, and premium design.",
   icons: {
     icon: "/images/logo/logo.jpg",
   },
@@ -29,9 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${oswald.variable} font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground`}
       >
         {children}
         <Analytics />
