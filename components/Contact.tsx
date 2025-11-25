@@ -105,7 +105,7 @@ export default function Contact() {
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white/5 p-8 rounded-2xl border border-white/10"
+                        className="bg-white/5 p-6 sm:p-8 rounded-2xl border border-white/10"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {success && (
@@ -130,7 +130,7 @@ export default function Contact() {
                                         type="text"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors"
+                                        className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 min-h-[48px] text-base focus:outline-none focus:border-primary transition-colors"
                                         placeholder="John Doe"
                                         required
                                     />
@@ -143,7 +143,7 @@ export default function Contact() {
                                         type="email"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors"
+                                        className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 min-h-[48px] text-base focus:outline-none focus:border-primary transition-colors"
                                         placeholder="john@example.com"
                                         required
                                     />
@@ -158,7 +158,7 @@ export default function Contact() {
                                     type="text"
                                     value={formData.businessName}
                                     onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors"
+                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 min-h-[48px] text-base focus:outline-none focus:border-primary transition-colors"
                                     placeholder="Your Company Ltd"
                                     required
                                 />
@@ -171,7 +171,7 @@ export default function Contact() {
                                 <select
                                     value={formData.budget}
                                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-foreground"
+                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 min-h-[48px] text-base focus:outline-none focus:border-primary transition-colors text-foreground"
                                     required
                                 >
                                     <option value="" disabled>
@@ -190,7 +190,7 @@ export default function Contact() {
                                 <textarea
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors min-h-[120px]"
+                                    className="w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-base focus:outline-none focus:border-primary transition-colors min-h-[120px]"
                                     placeholder="Tell us about your project..."
                                     required
                                 />
@@ -199,7 +199,7 @@ export default function Contact() {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full bg-primary text-primary-foreground font-bold py-4 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full bg-primary text-primary-foreground font-bold py-4 min-h-[52px] text-base rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {loading ? "Submitting..." : "Submit Project Request"}
                                 <Send className="w-4 h-4" />

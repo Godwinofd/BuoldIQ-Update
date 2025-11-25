@@ -31,7 +31,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading tracking-tight mb-6 leading-[1.1]"
+                    className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-heading tracking-tight mb-6 leading-[1.1] px-4 sm:px-0"
                 >
                     Websites Built to <br />
                     <span className="text-gradient-gold">Convert.</span> Designed to{" "}
@@ -44,7 +44,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+                    className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 px-4 sm:px-0"
                 >
                     We build modern, high-performance websites for brands that want to scale.
                     Blending architectural precision with digital innovation.
@@ -54,18 +54,18 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0"
                 >
                     <Link
                         href="#work"
-                        className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group"
+                        className="w-full sm:w-auto px-8 py-4 sm:py-4 min-h-[48px] bg-primary text-primary-foreground font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 group"
                     >
                         View Our Work
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                         href="#contact"
-                        className="w-full sm:w-auto px-8 py-4 bg-white/5 text-foreground font-bold rounded-lg hover:bg-white/10 border border-white/10 transition-colors flex items-center justify-center gap-2"
+                        className="w-full sm:w-auto px-8 py-4 sm:py-4 min-h-[48px] bg-white/5 text-foreground font-bold rounded-lg hover:bg-white/10 border border-white/10 transition-colors flex items-center justify-center gap-2"
                     >
                         Start a Project
                         <Code2 className="w-4 h-4" />
