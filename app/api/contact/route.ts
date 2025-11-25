@@ -1,45 +1,70 @@
-import nodemailer from "nodemailer";
+import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
+import { prisma } from '@/lib/prisma';
+import { sendThankYouEmail, sendAdminNotification } from '@/lib/email';
 
-export async function POST(req: Request) {
+// Validation schema
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
+  businessName: z.string().min(2, 'Business name must be at least 2 characters'),
+  budget: z.string().min(1, 'Please select a budget range'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+});
+
+export async function POST(request: NextRequest) {
   try {
-    const { name, email, business, message } = await req.json();
+    const body = await request.json();
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+    // Validate input
+    const validatedData = contactSchema.parse(body);
+
+    // Save to database
+    const submission = await prisma.contactSubmission.create({
+      data: {
+        name: validatedData.name,
+        email: validatedData.email,
+        businessName: validatedData.businessName,
+        budget: validatedData.budget,
+        message: validatedData.message,
       },
     });
 
-    // 1️⃣ Send to BuildIQ
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_TO,
-      subject: `New message from ${name} (${business})`,
-      text: `Name: ${name}\nEmail: ${email}\nBusiness: ${business}\n\nMessage:\n${message}`,
-    });
+    // Send thank you email to customer
+    const emailSent = await sendThankYouEmail(validatedData);
 
-    // 2️⃣ Auto-reply to sender
-    await transporter.sendMail({
-      from: `"BuildIQ" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "Thanks for getting in touch with BuildIQ",
-      text: `Hi ${name},\n\nThanks for reaching out to BuildIQ. We've received your message and will get back to you within 24 hours.\n\n— The BuildIQ Team`,
-      html: `
-        <div style="font-family:Arial,sans-serif;line-height:1.6;color:#222">
-          <h2 style="color:#C8A86A;">Hi ${name},</h2>
-          <p>Thanks for getting in touch with <strong>BuildIQ</strong>.</p>
-          <p>We’ve received your message and our team will reach out within 24 hours.</p>
-          <br/>
-          <p style="color:#888;font-size:13px;">— The BuildIQ Team</p>
-        </div>
-      `,
-    });
+    // Send notification to admin
+    await sendAdminNotification(validatedData);
 
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Thank you for your submission! We will get back to you within 48 hours.',
+        submissionId: submission.id,
+        emailSent,
+      },
+      { status: 201 }
+    );
   } catch (error) {
-    console.error("Error:", error);
-    return new Response(JSON.stringify({ error: "Failed to send message" }), { status: 500 });
+    console.error('Contact form error:', error);
+
+    if (error instanceof z.ZodError) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'Validation error',
+          errors: error.issues,
+        },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'An error occurred while processing your submission. Please try again.',
+      },
+      { status: 500 }
+    );
   }
 }
